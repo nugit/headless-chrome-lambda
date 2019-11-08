@@ -1,0 +1,32 @@
+service: chrome-lambda
+provider:
+  name: aws
+  runtime: nodejs8.10
+  timeout: 180
+
+plugins:
+  - serverless-offline
+  
+package:
+  exclude:
+    - node_modules/puppeteer/.local-chromium/**
+
+functions:
+  headless-chrome:
+    handler: index.handler
+    memorySize: 1600MB
+    timeout: 240
+    events:
+      - http:
+          path: /
+          method: post
+
+custom:
+  chrome:
+      flags:
+          # - --window-size=300,400 # Letter size
+          - --hide-scrollbars
+          - --ignore-certificate-errors
+      functions:
+          - headless-chrome
+
