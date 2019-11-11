@@ -1,11 +1,11 @@
 const chromium = require('chrome-aws-lambda');
- 
+
 exports.handler = async (event, context) => {
   let browser = null;
   let result = null;
   let response = null;
-  let expiry = 60000;
- 
+  const expiry = 60000;
+
   try {
     browser = await chromium.puppeteer.launch({
       args: chromium.args,
@@ -13,11 +13,11 @@ exports.handler = async (event, context) => {
       executablePath: await chromium.executablePath,
       headless: true,
     });
- 
-    let page = await browser.newPage();
-    
+
+    const page = await browser.newPage();
+
     const html = event.body;
-    
+
     if (html) {
       page.setContent(html);
     }
@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
       });
     }
 
-    const buffer = await page.screenshot({omitBackground: true});
+    const buffer = await page.screenshot({ omitBackground: true });
 
     await browser.close();
     result = buffer.toString('base64');
@@ -38,9 +38,8 @@ exports.handler = async (event, context) => {
     response = {
       isBase64Encoded: true,
       statusCode: 200,
-      body: result
-    }
-
+      body: result,
+    };
   } catch (error) {
     console.warn(error);
     return context.fail(response);

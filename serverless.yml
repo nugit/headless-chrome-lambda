@@ -6,7 +6,7 @@ provider:
 
 plugins:
   - serverless-offline
-  
+
 package:
   exclude:
     - node_modules/puppeteer/.local-chromium/**
