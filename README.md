@@ -1,6 +1,6 @@
 # headless-chrome-lambda
 
-This project based on [chrome-aws-lamdba](https://www.npmjs.com/package/chrome-aws-lambda).
+This project based on [chrome-aws-lamdba](https://www.npmjs.com/package/chrome-aws-lambda). Nodejs version = `8.10`.
 
 #### Usage
 Checkout the API endpoint from API Gateway in AWS lambda.
@@ -19,3 +19,6 @@ Before deploy to AWS, Please make sure the [serverless](https://serverless.com/c
 Install `serverless-offline` plugin , then
 
 ```sls offline```
+
+#### Reference
+[AWS lambda document](https://docs.aws.amazon.com/lambda/latest/dg/programming-model.html)
