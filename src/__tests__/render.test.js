@@ -7,6 +7,8 @@ const { nugit1, helloWorld } = require('./fixtures');
 
 expect.extend({ toMatchImageSnapshot });
 
+const compareImageOptions = { failureThreshold: 0.01, failureThresholdType: 'percent' };
+
 describe('render', () => {
   describe('renderPage', () => {
     test('should call pageHandler with page htmlContent', async () => {
@@ -50,7 +52,7 @@ describe('render', () => {
       const job = renderAndScreenshotPage({ content: helloWorld, selector: 'p' });
       await expect(job).resolves.toEqual([expect.any(Buffer)]);
       const result = await job;
-      expect(result[0]).toMatchImageSnapshot({ failureThreshold: 0.01 });
+      expect(result[0]).toMatchImageSnapshot(compareImageOptions);
     });
 
     test('should properly screenshot nugit with selector', async () => {
@@ -59,9 +61,9 @@ describe('render', () => {
         [expect.any(Buffer), expect.any(Buffer), expect.any(Buffer)],
       );
       const result = await job;
-      expect(result[0]).toMatchImageSnapshot({ failureThreshold: 0.01 });
-      expect(result[1]).toMatchImageSnapshot({ failureThreshold: 0.01 });
-      expect(result[2]).toMatchImageSnapshot({ failureThreshold: 0.01 });
+      expect(result[0]).toMatchImageSnapshot(compareImageOptions);
+      expect(result[1]).toMatchImageSnapshot(compareImageOptions);
+      expect(result[2]).toMatchImageSnapshot(compareImageOptions);
     }, 30000);
   });
 });
