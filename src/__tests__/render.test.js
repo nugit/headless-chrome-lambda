@@ -3,7 +3,7 @@ const { format } = require('prettier');
 const { Page } = require('puppeteer/lib/api');
 const { toMatchImageSnapshot } = require('jest-image-snapshot');
 const { renderAndScreenshotPage, renderPage } = require('../render');
-const { nugit1, helloWorld } = require('./fixtures');
+const { nugit1, helloWorld } = require('../fixtures');
 
 expect.extend({ toMatchImageSnapshot });
 
@@ -21,7 +21,7 @@ describe('render', () => {
       await expect(renderPage(helloWorld, pageHandler)).resolves.toBe(42);
       expect(pageHandler).toHaveBeenCalledWith(expect.any(Page));
       expect(pageContent).toBe(format(helloWorld, { parser: 'html' }));
-    });
+    }, 30000);
 
     test('should close browser instance when pageHandler is finished', async () => {
       const pageHandler = jest.fn().mockResolvedValue(42);
@@ -32,7 +32,7 @@ describe('render', () => {
       await expect(page.content()).rejects.toThrow(
         'Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.',
       );
-    });
+    }, 30000);
 
     test('should catch errors in pageHandler and close browser', async () => {
       const e = new Error('Oops');
@@ -44,7 +44,7 @@ describe('render', () => {
       await expect(page.content()).rejects.toThrow(
         'Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.',
       );
-    });
+    }, 30000);
   });
 
   describe('renderAndScreenshotPage', () => {
@@ -53,7 +53,7 @@ describe('render', () => {
       await expect(job).resolves.toEqual([expect.any(Buffer)]);
       const result = await job;
       expect(result[0]).toMatchImageSnapshot(compareImageOptions);
-    });
+    }, 30000);
 
     test('should properly screenshot nugit with selector', async () => {
       const job = renderAndScreenshotPage({ content: nugit1, selector: '.vis-key-metrics__item' });

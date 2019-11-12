@@ -3,8 +3,8 @@ const { renderAndScreenshotPage } = require('../render');
 const { createClient, uploadBufferImage } = require('../uploader');
 const { handler } = require('../index');
 
-jest.mock('./render');
-jest.mock('./uploader');
+jest.mock('../render');
+jest.mock('../uploader');
 
 describe('index', () => {
   describe('handler', () => {

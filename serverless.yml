@@ -29,6 +29,7 @@ plugins:
 package:
   exclude:
     - node_modules/puppeteer/.local-chromium/**
+    - src/fixtures/**
     - src/__tests__/**
     - .*
     - node_modules/aws-sdk/**

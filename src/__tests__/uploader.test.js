@@ -1,16 +1,14 @@
-const AWS = require('aws-sdk');
+const S3 = require('aws-sdk/clients/s3');
 const uuid = require('uuid/v4');
 const { createClient, uploadBufferImage } = require('../uploader');
 
 jest.mock('uuid/v4');
-jest.mock('aws-sdk', () => ({
-  S3: jest.fn(),
-}));
+jest.mock('aws-sdk/clients/s3');
 
 describe('uploader', () => {
   describe('createClient', () => {
     test('should returns new S3 client', () => {
-      expect(createClient()).toEqual(AWS.S3.mock.instances[0]);
+      expect(createClient()).toEqual(S3.mock.instances[0]);
     });
   });
 
