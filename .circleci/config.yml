@@ -22,20 +22,20 @@ commands:
 jobs:
   setup:
     docker:
-      - image: circleci/node:10.13
+      - image: circleci/node:10.13-browsers
     steps:
       - checkout
       - install
   test:
     docker:
-      - image: circleci/node:10.13
+      - image: circleci/node:10.13-browsers
     steps:
       - checkout
       - install
       - run: yarn test --ci
   lint:
     docker:
-      - image: circleci/node:10.13
+      - image: circleci/node:10.13-browsers
     steps:
       - checkout
       - install
