@@ -13,7 +13,7 @@ async function renderPage(content, pageHandler) {
   try {
     const page = await browser.newPage();
 
-    await page.setContent(content, { waitUntil: 'networkidle0' });
+    await page.setContent(content, { waitUntil: ['networkidle0', 'domcontentloaded', 'load'] });
     const result = await pageHandler(page);
     await browser.close();
 
