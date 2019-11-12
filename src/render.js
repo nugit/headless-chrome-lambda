@@ -1,6 +1,6 @@
 const chromium = require('chrome-aws-lambda');
 
-const INITIAL_VIEWPORT = { height: 300, width: 700, deviceScaleFactor: 2 };
+const INITIAL_VIEWPORT = { height: 300, width: 790, deviceScaleFactor: 2 };
 
 async function renderPage(content, pageHandler) {
   const browser = await chromium.puppeteer.launch({
