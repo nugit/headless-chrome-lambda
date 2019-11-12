@@ -1,9 +1,9 @@
 
-const AWS = require('aws-sdk');
+const S3 = require('aws-sdk/clients/s3');
 const uuid = require('uuid/v4');
 
 function createClient() {
-  return new AWS.S3();
+  return new S3();
 }
 
 async function uploadBufferImage(client, buffer) {

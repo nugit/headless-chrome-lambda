@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const uuid = require('uuid/v4');
-const { createClient, uploadBufferImage } = require('./uploader');
+const { createClient, uploadBufferImage } = require('../uploader');
 
 jest.mock('uuid/v4');
 jest.mock('aws-sdk', () => ({

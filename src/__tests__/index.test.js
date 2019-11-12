@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
-const { renderAndScreenshotPage } = require('./render');
-const { createClient, uploadBufferImage } = require('./uploader');
-const { handler } = require('./index');
+const { renderAndScreenshotPage } = require('../render');
+const { createClient, uploadBufferImage } = require('../uploader');
+const { handler } = require('../index');
 
 jest.mock('./render');
 jest.mock('./uploader');

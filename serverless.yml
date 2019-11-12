@@ -1,7 +1,7 @@
 service: chrome-lambda
 provider:
   name: aws
-  runtime: nodejs10.10
+  runtime: nodejs10.x
   timeout: 180
 
 plugins:
@@ -11,6 +11,9 @@ plugins:
 package:
   exclude:
     - node_modules/puppeteer/.local-chromium/**
+    - src/__tests__/**
+    - .*
+    - node_modules/aws-sdk/**
 
 functions:
   headless-chrome:
@@ -18,8 +21,6 @@ functions:
     memorySize: 1600MB
     timeout: 240
     environment:
-      AWS_ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
       S3_BUCKET: ${env:S3_BUCKET}
     events:
       - http:
