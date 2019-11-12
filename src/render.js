@@ -14,6 +14,7 @@ async function renderPage(content, pageHandler) {
     const page = await browser.newPage();
 
     await page.setContent(content, { waitUntil: ['networkidle0', 'domcontentloaded', 'load'] });
+    await new Promise(resolve => setTimeout(resolve, 5000));
     const result = await pageHandler(page);
     await browser.close();
 
