@@ -1,0 +1,54 @@
+version: 2.1
+
+commands:
+  install:
+    description: "Yarn install"
+    steps:
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-{{ .Branch }}
+            - yarn-packages-master
+            - yarn-packages-
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules/
+jobs:
+  setup:
+    docker:
+      - image: circleci/node:10.10
+    steps:
+      - checkout
+      - install
+  test:
+    docker:
+      - image: circleci/node:10.10
+    steps:
+      - checkout
+      - install
+      - run: yarn test --ci
+  lint:
+    docker:
+      - image: circleci/node:10.10
+    steps:
+      - checkout
+      - install
+      - run: yarn lint
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - setup
+      - lint:
+          requires:
+            - setup
+      - test:
+          requires:
+            - setup
