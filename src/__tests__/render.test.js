@@ -7,7 +7,7 @@ const { nugit1, helloWorld } = require('../fixtures');
 
 expect.extend({ toMatchImageSnapshot });
 
-const compareImageOptions = { failureThreshold: 0.01, failureThresholdType: 'percent' };
+const compareImageOptions = { failureThreshold: 0.02, failureThresholdType: 'percent' };
 
 describe('render', () => {
   describe('renderPage', () => {
