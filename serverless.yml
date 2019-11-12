@@ -1,11 +1,12 @@
 service: chrome-lambda
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.10
   timeout: 180
 
 plugins:
   - serverless-offline
+  - serverless-dotenv-plugin
 
 package:
   exclude:
@@ -13,20 +14,27 @@ package:
 
 functions:
   headless-chrome:
-    handler: index.handler
+    handler: src/index.handler
     memorySize: 1600MB
     timeout: 240
+    environment:
+      AWS_ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+      S3_BUCKET: ${env:S3_BUCKET}
     events:
       - http:
           path: /
           method: post
+          response:
+            headers:
+              Content-Type: 'image/png'
 
 custom:
   chrome:
-      flags:
-          # - --window-size=300,400 # Letter size
-          - --hide-scrollbars
-          - --ignore-certificate-errors
-      functions:
-          - headless-chrome
+    flags:
+        # - --window-size=300,400 # Letter size
+        - --hide-scrollbars
+        - --ignore-certificate-errors
+    functions:
+        - headless-chrome
 
