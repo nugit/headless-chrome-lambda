@@ -33,6 +33,8 @@ jobs:
       - checkout
       - install
       - run: yarn test --ci
+      - store_artifacts:
+          path: src/__image_snapshots__/__diff_output__
   lint:
     docker:
       - image: circleci/node:10.13-browsers
