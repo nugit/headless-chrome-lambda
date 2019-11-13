@@ -18,7 +18,7 @@ describe('render', () => {
         return 42;
       });
 
-      await expect(renderPage(helloWorld, pageHandler)).resolves.toBe(42);
+      await expect(renderPage({ content: helloWorld }, pageHandler)).resolves.toBe(42);
       expect(pageHandler).toHaveBeenCalledWith(expect.any(Page));
       expect(pageContent).toBe(format(helloWorld, { parser: 'html' }));
     }, 30000);
@@ -26,7 +26,7 @@ describe('render', () => {
     test('should close browser instance when pageHandler is finished', async () => {
       const pageHandler = jest.fn().mockResolvedValue(42);
 
-      await expect(renderPage(helloWorld, pageHandler)).resolves.toBe(42);
+      await expect(renderPage({ content: helloWorld }, pageHandler)).resolves.toBe(42);
       expect(pageHandler).toHaveBeenCalledWith(expect.any(Page));
       const page = pageHandler.mock.calls[0][0];
       await expect(page.content()).rejects.toThrow(
@@ -38,18 +38,47 @@ describe('render', () => {
       const e = new Error('Oops');
       const pageHandler = jest.fn().mockRejectedValue(e);
 
-      await expect(renderPage(helloWorld, pageHandler)).rejects.toThrow(e);
+      await expect(renderPage({ content: helloWorld }, pageHandler)).rejects.toThrow(e);
       expect(pageHandler).toHaveBeenCalledWith(expect.any(Page));
       const page = pageHandler.mock.calls[0][0];
       await expect(page.content()).rejects.toThrow(
         'Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.',
       );
     }, 30000);
+
+    test('should support custom js', async () => {
+      let pageContent = null;
+      const pageHandler = jest.fn().mockImplementation(async (page) => {
+        pageContent = format(await page.content(), { parser: 'html' });
+        return 42;
+      });
+
+      const js = `
+        const node = document.getElementById("text");
+        node.textContent = "Update Text & Color";
+        node.style.color = "#ff0000";
+      `;
+      await expect(renderPage({ content: helloWorld, js }, pageHandler)).resolves.toBe(42);
+      expect(pageHandler).toHaveBeenCalledWith(expect.any(Page));
+      expect(pageContent).toMatchSnapshot();
+    }, 30000);
   });
 
   describe('renderAndScreenshotPage', () => {
     test('should properly screenshot basic html', async () => {
       const job = renderAndScreenshotPage({ content: helloWorld, selector: 'p' });
+      await expect(job).resolves.toEqual([expect.any(Buffer)]);
+      const result = await job;
+      expect(result[0]).toMatchImageSnapshot(compareImageOptions);
+    }, 30000);
+
+    test('should properly screenshot when using js', async () => {
+      const js = `
+        const node = document.getElementById("text");
+        node.textContent = "Update Text & Color";
+        node.style.color = "#ff0000";
+      `;
+      const job = renderAndScreenshotPage({ content: helloWorld, js, selector: 'p' });
       await expect(job).resolves.toEqual([expect.any(Buffer)]);
       const result = await job;
       expect(result[0]).toMatchImageSnapshot(compareImageOptions);

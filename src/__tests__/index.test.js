@@ -20,6 +20,7 @@ describe('index', () => {
 
       const data = {
         content: '<html><body>Hello World</body></html>',
+        js: 'console.log("Some JS");',
         selector: 'body',
       };
       const event = {

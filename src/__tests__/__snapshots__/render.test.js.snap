@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render renderPage should support custom js 1`] = `
+"<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p id=\\"text\\" style=\\"color: rgb(255, 0, 0);\\">Update Text &amp; Color</p>
+  </body>
+</html>
+"
+`;

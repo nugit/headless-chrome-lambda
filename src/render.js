@@ -2,7 +2,7 @@ const chromium = require('chrome-aws-lambda');
 
 const INITIAL_VIEWPORT = { height: 300, width: 790, deviceScaleFactor: 2 };
 
-async function renderPage(content, pageHandler) {
+async function renderPage({ content, js = null }, pageHandler) {
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: INITIAL_VIEWPORT,
@@ -14,6 +14,9 @@ async function renderPage(content, pageHandler) {
     const page = await browser.newPage();
 
     await page.setContent(content, { waitUntil: ['networkidle0', 'domcontentloaded', 'load'] });
+    if (js) {
+      await page.evaluate(js);
+    }
     const result = await pageHandler(page);
     await browser.close();
 
@@ -62,8 +65,8 @@ async function screenshotPage(selector, page) {
   return buffers;
 }
 
-function renderAndScreenshotPage({ content, selector }) {
-  return renderPage(content, page => screenshotPage(selector, page));
+function renderAndScreenshotPage({ content, js, selector }) {
+  return renderPage({ content, js }, page => screenshotPage(selector, page));
 }
 
 module.exports = {
