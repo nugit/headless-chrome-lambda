@@ -1,24 +1,57 @@
 # headless-chrome-lambda
 
-This project based on [chrome-aws-lamdba](https://www.npmjs.com/package/chrome-aws-lambda). Nodejs version = `8.10`.
+Serverless Chrome Service use to take HTML Screenshots.
 
-#### Usage
-Checkout the API endpoint from API Gateway in AWS lambda.
-- `METHOD`: POST
-- `Request body` : HTML entity
-- `URL Params: url(Optional)` : The url to be rendered. If this param has been sent, it will cover the HTML rendering.
+## API
 
-`Return`: Base64-encoded string of PNG file
+### POST /
 
-#### Deploy
+**Body:**
+
+> Body should be in JSON format.
+
+| Param    | type   | Description                                                      | Required |
+|----------|--------|------------------------------------------------------------------|----------|
+| content  | string | HTML Content to screenshot                                       | YES      |
+| selector | string | CSS selector of HTML part to screenshot                          | YES      |
+| js       | string | Synchronous javascript code to execute before taking screenshots | NO       |
+
+**Return**
+
+Array of screenshots urls
+
+## Developing
+
+### Deployments
+
 Before deploy to AWS, Please make sure the [serverless](https://serverless.com/cli/) has been installed and the aws credentials has been set.
 
-```sls deploy```
+#### Staging
 
-#### Local Development
-Install `serverless-offline` plugin , then
+- Create `.env` file setting `S3_BUCKET`
+
+```
+S3_BUCKET=
+```
+
+```sls deploy -s staging```
+
+#### Production
+
+- Create `.env` file setting `S3_BUCKET`
+
+```
+S3_BUCKET=
+```
+
+```sls deploy -s production```
+
+### Local Development
+
+Install `serverless-offline` plugin, then
 
 ```sls offline```
 
-#### Reference
+## Reference
+
 [AWS lambda document](https://docs.aws.amazon.com/lambda/latest/dg/programming-model.html)
