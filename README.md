@@ -1,6 +1,6 @@
 # headless-chrome-lambda
 
-Serverless Chrome Service used to take HTML Screenshots.
+Serverless Chrome Service use to take HTML Screenshots.
 
 ## API
 
@@ -20,7 +20,7 @@ Serverless Chrome Service used to take HTML Screenshots.
 
 Array of screenshots urls
 
-## Developping
+## Developing
 
 ### Deployments
 

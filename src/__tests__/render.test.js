@@ -1,4 +1,3 @@
-
 const { format } = require('prettier');
 const { Page } = require('puppeteer/lib/api');
 const { toMatchImageSnapshot } = require('jest-image-snapshot');
