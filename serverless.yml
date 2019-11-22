@@ -22,6 +22,16 @@ provider:
           - - 'arn:aws:s3:::'
             - Ref: MainBucket
             - '/*'
+    - Effect: 'Allow'
+      Action:
+        - 'logs:CreateLogGroup'
+        - 'logs:CreateLogStream'
+        - 'logs:PutLogEvents'
+      Resource:
+        Fn::Join:
+          - 'arn:aws:logs::log-group:/aws/lambda/chrome-lambda-'
+          - ${opt:stage}
+          - '-headless-chrome:*'
 
 plugins:
   - serverless-offline
