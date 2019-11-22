@@ -35,7 +35,7 @@ describe('uploader', () => {
         ContentType: 'image/png',
       });
       expect(client.getSignedUrl).toHaveBeenCalledWith(
-        'getObject', { Bucket: 's3-test-bucket-name', Key: 'uuid.png' },
+        'getObject', { Bucket: 's3-test-bucket-name', Key: 'uuid.png', Expires: 1209600 },
       );
     });
 
@@ -62,7 +62,7 @@ describe('uploader', () => {
         ServerSideEncryption: 'AES256',
       });
       expect(client.getSignedUrl).toHaveBeenCalledWith(
-        'getObject', { Bucket: 's3-test-bucket-name', Key: 'uuid.png' },
+        'getObject', { Bucket: 's3-test-bucket-name', Key: 'uuid.png', Expires: 1209600 },
       );
     });
   });
