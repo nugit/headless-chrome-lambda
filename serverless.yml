@@ -26,16 +26,16 @@ provider:
       Action:
         - 'logs:CreateLogGroup'
         - 'logs:CreateLogStream'
+      Resource: arn:aws:logs:#{AWS::Region}:#{AWS::AccountId}:log-group:/aws/lambda/${self:service}-${opt:stage}-headless-chrome:*
+    - Effect: 'Allow'
+      Action:
         - 'logs:PutLogEvents'
-      Resource:
-        Fn::Join:
-          - 'arn:aws:logs::log-group:/aws/lambda/chrome-lambda-'
-          - ${opt:stage}
-          - '-headless-chrome:*'
+      Resource: arn:aws:logs:#{AWS::Region}:#{AWS::AccountId}:log-group:/aws/lambda/${self:service}-${opt:stage}-headless-chrome:*:*
 
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin
+  - serverless-pseudo-parameters
 
 package:
   exclude:
