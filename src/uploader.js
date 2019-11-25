@@ -22,6 +22,7 @@ async function uploadBufferImage(client, buffer) {
   return client.getSignedUrl('getObject', {
     Bucket: S3_BUCKET,
     Key: key,
+    Expires: 14 * 24 * 3600, // 2 weeks
   });
 }
 

@@ -22,6 +22,8 @@ Array of screenshots urls
 
 ## Developing
 
+> Note: you need to install [Git lfs](https://git-lfs.github.com/)
+
 ### Deployments
 
 Before deploy to AWS, Please make sure the [serverless](https://serverless.com/cli/) has been installed and the aws credentials has been set.
