@@ -27,3 +27,6 @@ yarn-error.log
 
 # Env
 .env
+
+# Font files
+layers/fonts/*

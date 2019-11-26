@@ -22,10 +22,20 @@ provider:
           - - 'arn:aws:s3:::'
             - Ref: MainBucket
             - '/*'
+    - Effect: 'Allow'
+      Action:
+        - 'logs:CreateLogGroup'
+        - 'logs:CreateLogStream'
+      Resource: arn:aws:logs:#{AWS::Region}:#{AWS::AccountId}:log-group:/aws/lambda/${self:service}-${opt:stage}-headless-chrome:*
+    - Effect: 'Allow'
+      Action:
+        - 'logs:PutLogEvents'
+      Resource: arn:aws:logs:#{AWS::Region}:#{AWS::AccountId}:log-group:/aws/lambda/${self:service}-${opt:stage}-headless-chrome:*:*
 
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin
+  - serverless-pseudo-parameters
 
 package:
   exclude:
@@ -33,22 +43,28 @@ package:
     - src/fixtures/**
     - src/__tests__/**
     - .*
+    - layers/**
     - node_modules/aws-sdk/**
 
 functions:
   headless-chrome:
     handler: src/index.handler
     memorySize: 1600MB
-    timeout: 240
+    timeout: 30
     environment:
       S3_BUCKET: ${env:S3_BUCKET}
+      HOME: /opt/fonts
+    layers:
+      - { Ref: FontsLambdaLayer }
     events:
       - http:
           path: /
           method: post
-          response:
-            headers:
-              Content-Type: 'image/png'
+
+layers:
+  fonts:
+    package:
+      artifact: layers/fonts.zip
 
 resources:
   Resources:
@@ -60,7 +76,6 @@ resources:
 custom:
   chrome:
     flags:
-        # - --window-size=300,400 # Letter size
         - --hide-scrollbars
         - --ignore-certificate-errors
     functions:
