@@ -30,20 +30,33 @@ Before deploy to AWS, Please make sure the [serverless](https://serverless.com/c
 
 #### Staging
 
-- Create `.env` file setting `S3_BUCKET`
+- Create `.env` file setting `S3_BUCKET`, `CREDENTIALS_ID` & `CREDENTIALS_SECRET`
 
 ```
+# S3 bucket name used to save screenshots
 S3_BUCKET=
+# AWS access key ID
+CREDENTIALS_ID=
+# AWS secret
+CREDENTIALS_SECRET=
 ```
+
+> Note: we can't use env vars `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY` because it's reserved
+> in lambda ecosystem.
 
 ```sls deploy -s staging```
 
 #### Production
 
-- Create `.env` file setting `S3_BUCKET`
+- Create `.env` file setting `S3_BUCKET`, `CREDENTIALS_ID` & `CREDENTIALS_SECRET`
 
 ```
+# S3 bucket name used to save screenshots
 S3_BUCKET=
+# AWS access key ID
+CREDENTIALS_ID=
+# AWS secret
+CREDENTIALS_SECRET=
 ```
 
 ```sls deploy -s production```
@@ -52,7 +65,7 @@ S3_BUCKET=
 
 Install `serverless-offline` plugin, then
 
-```sls offline```
+```sls offline -s staging```
 
 ## Reference
 
