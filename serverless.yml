@@ -53,6 +53,8 @@ functions:
     timeout: 30
     environment:
       S3_BUCKET: ${env:S3_BUCKET}
+      CREDENTIALS_ID: ${env:CREDENTIALS_ID}
+      CREDENTIALS_SECRET: ${env:CREDENTIALS_SECRET}
       HOME: /opt/fonts
     layers:
       - { Ref: FontsLambdaLayer }

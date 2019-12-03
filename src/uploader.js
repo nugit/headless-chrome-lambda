@@ -2,7 +2,10 @@ const S3 = require('aws-sdk/clients/s3');
 const uuid = require('uuid/v4');
 
 function createClient() {
-  return new S3();
+  return new S3({
+    accessKeyId: process.env.CREDENTIALS_ID,
+    secretAccessKey: process.env.CREDENTIALS_SECRET,
+  });
 }
 
 async function uploadBufferImage(client, buffer) {
