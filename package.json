@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.591.0",
+    "aws-sdk": "^2.596.0",
     "chrome-aws-lambda": "^2.0.1",
     "puppeteer-core": "^2.0.0",
     "serverless-pseudo-parameters": "^2.5.0",
