@@ -755,11 +755,11 @@ ansi-escapes@^3.0.0:
   integrity sha512-cBhpre4ma+U0T1oM5fXg7Dy1Jw7zzwv7lt/GoCpr+hDQJoYnKVPLL4dCvSEFMmQurOQvSrwT7SL/DAlhBI97RQ==
 
 ansi-escapes@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-4.2.1.tgz#4dccdb846c3eee10f6d64dea66273eab90c37228"
-  integrity sha512-Cg3ymMAdN10wOk/VYfLV7KCQyv7EDirJ64500sU7n9UlmioEtDuU5Gd+hj73hXSU/ex7tHJSssmyftDdkMLO8Q==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-4.3.0.tgz#a4ce2b33d6b214b7950d8595c212f12ac9cc569d"
+  integrity sha512-EiYhwo0v255HUL6eDyuLrXEkTi7WwVCLAw+SeOQ7M7qdun1z1pum4DEm/nuqIVbPvi9RPPc9k9LbyBv6H0DwVg==
   dependencies:
-    type-fest "^0.5.2"
+    type-fest "^0.8.1"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -775,6 +775,11 @@ ansi-regex@^4.0.0, ansi-regex@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
   integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
+
+ansi-regex@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.0.tgz#388539f55179bf39339c81af30a654d69f87cb75"
+  integrity sha512-bY6fj56OUQ0hU1KjFNDQuJFezqKdrAyFdIevADiqrWHwSlbmBNMHp5ak2f40Pm8JTFyM2mqxkG6ngkHO11f/lg==
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -2533,9 +2538,9 @@ ini@^1.3.4, ini@~1.3.0:
   integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
 
 inquirer@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.0.0.tgz#9e2b032dde77da1db5db804758b8fea3a970519a"
-  integrity sha512-rSdC7zelHdRQFkWnhsMu2+2SO41mpv2oF2zy4tMhmiLWkcKbOAs87fWAJhVXttKVwhdZvymvnuM95EyEXg2/tQ==
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.0.1.tgz#13f7980eedc73c689feff3994b109c4e799c6ebb"
+  integrity sha512-V1FFQ3TIO15det8PijPLFR9M9baSlnRs9nL7zWu1MNVA2T9YVl9ZbrHJhYs7e9X8jeMZ3lr2JH/rdHFgNCBdYw==
   dependencies:
     ansi-escapes "^4.2.1"
     chalk "^2.4.2"
@@ -2546,7 +2551,7 @@ inquirer@^7.0.0:
     lodash "^4.17.15"
     mute-stream "0.0.8"
     run-async "^2.2.0"
-    rxjs "^6.4.0"
+    rxjs "^6.5.3"
     string-width "^4.1.0"
     strip-ansi "^5.1.0"
     through "^2.3.6"
@@ -4634,7 +4639,7 @@ run-async@^2.2.0:
   dependencies:
     is-promise "^2.1.0"
 
-rxjs@^6.4.0:
+rxjs@^6.5.3:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.4.tgz#e0777fe0d184cec7872df147f303572d414e211c"
   integrity sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==
@@ -4965,13 +4970,13 @@ string-width@^3.0.0, string-width@^3.1.0:
     strip-ansi "^5.1.0"
 
 string-width@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.1.0.tgz#ba846d1daa97c3c596155308063e075ed1c99aff"
-  integrity sha512-NrX+1dVVh+6Y9dnQ19pR0pP4FiEIlUvdTGn8pw6CKTNq5sgib2nIhmUNT5TAmhWmvKr3WcxBcP3E8nWezuipuQ==
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.0.tgz#952182c46cc7b2c313d1596e623992bd163b72b5"
+  integrity sha512-zUz5JD+tgqtuDjMhwIg5uFVV3dtqZ9yQJlZVfq4I01/K5Paj5UHj7VyrQOJvzawSVlKpObApbfD0Ed6yJc+1eg==
   dependencies:
     emoji-regex "^8.0.0"
     is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^5.2.0"
+    strip-ansi "^6.0.0"
 
 string.prototype.trimleft@^2.1.1:
   version "2.1.1"
@@ -5023,6 +5028,13 @@ strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
+
+strip-ansi@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
+  integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
+  dependencies:
+    ansi-regex "^5.0.0"
 
 strip-bom@^3.0.0:
   version "3.0.0"
@@ -5247,11 +5259,6 @@ type-fest@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
   integrity sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
-
-type-fest@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.5.2.tgz#d6ef42a0356c6cd45f49485c3b6281fc148e48a2"
-  integrity sha512-DWkS49EQKVX//Tbupb9TFa19c7+MK1XmzkrZUR8TAktmE/DizXoaoJV6TZ/tSIPXipqNiRI6CyAe7x69Jb6RSw==
 
 type-fest@^0.8.1:
   version "0.8.1"
