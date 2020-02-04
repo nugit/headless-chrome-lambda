@@ -1717,10 +1717,10 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-nugit@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-nugit/-/eslint-config-nugit-0.2.0.tgz#a0890f860006a2f1cdd760bc1248d0a43bb7d595"
-  integrity sha512-90jwoR3Cx6oQIKZpP67eivsIvcpFCazs0jVh/OtTmFG5VDr6IiHGiBUrnNGDT0qDaE98IYYH2Dkncdd7WrsmeQ==
+eslint-config-nugit@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-nugit/-/eslint-config-nugit-0.3.1.tgz#e57c4a7e18e9bd904abbbcde802378c99a98ca0e"
+  integrity sha512-uOBvkhL5UwkWM5n6zS6L0JEpi4aE15hzhH0lHWN4kzo1fiVNCfSB7YASzVUdmVN4kn01UCcYMLDKmPR7zVev+A==
   dependencies:
     confusing-browser-globals "^1.0.7"
 
