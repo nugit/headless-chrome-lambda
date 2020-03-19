@@ -1,5 +1,5 @@
 const S3 = require('aws-sdk/clients/s3');
-const uuid = require('uuid/v4');
+const { v4: uuid } = require('uuid');
 
 function createClient() {
   return new S3({

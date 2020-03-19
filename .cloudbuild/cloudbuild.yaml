@@ -1,0 +1,17 @@
+steps:
+- name: 'us.gcr.io/massive-team-793/nodejs/10.13-browser/headless-chrome-lambda:latest'
+  id: 'setup'
+  entrypoint: yarn
+  args: ['install']
+- name: 'us.gcr.io/massive-team-793/nodejs/10.13-browser/headless-chrome-lambda:latest'
+  id: 'lint'
+  entrypoint: yarn
+  args: ['lint']
+- name: 'us.gcr.io/massive-team-793/nodejs/10.13-browser/headless-chrome-lambda:latest'
+  id: 'test'
+  entrypoint: yarn
+  args: ['test', '--ci']
+artifacts:
+  objects:
+    location: "gs://nugit-headless-chrome/$BUILD_ID"
+    paths: ['src/__tests__/__image_snapshots__/*']
