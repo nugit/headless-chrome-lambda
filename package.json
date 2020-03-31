@@ -14,7 +14,7 @@
     "chrome-aws-lambda": "^2.1.1",
     "puppeteer-core": "^2.1.1",
     "serverless-pseudo-parameters": "^2.5.0",
-    "uuid": "^7.0.2"
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
