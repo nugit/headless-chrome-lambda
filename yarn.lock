@@ -232,21 +232,12 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.0.0", "@babel/types@^7.3.0", "@babel/types@^7.8.3", "@babel/types@^7.8.6", "@babel/types@^7.9.0":
+"@babel/types@^7.0.0", "@babel/types@^7.3.0", "@babel/types@^7.7.0", "@babel/types@^7.8.3", "@babel/types@^7.8.6", "@babel/types@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.9.0.tgz#00b064c3df83ad32b2dbf5ff07312b15c7f1efb5"
   integrity sha512-BS9JKfXkzzJl8RluW4JGknzpiUV7ZrvTayM6yfqLTVBEnFtyowVIOu6rqxRd5cVO6yGoWf4T8u8dgK9oB+GCng==
   dependencies:
     "@babel/helper-validator-identifier" "^7.9.0"
-    lodash "^4.17.13"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.7.0":
-  version "7.8.3"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.8.3.tgz#5a383dffa5416db1b73dedffd311ffd0788fb31c"
-  integrity sha512-jBD+G8+LWpMBBWvVcdr4QysjUE4mU/syrhN17o1u3gx0/WzJB1kwiVZAXRtWbsIPOwW8pF/YJV5+nmetPzepXg==
-  dependencies:
-    esutils "^2.0.2"
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
@@ -2162,17 +2153,17 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-expect@^25.2.4:
-  version "25.2.4"
-  resolved "https://registry.yarnpkg.com/expect/-/expect-25.2.4.tgz#b66e0777c861034ebc21730bb34e1839d5d46806"
-  integrity sha512-hfuPhPds4yOsZtIw4kwAg70r0hqGmpqekgA+VX7pf/3wZ6FY+xIOXZhNsPMMMsspYG/YIsbAiwqsdnD4Ht+bCA==
+expect@^25.2.4, expect@^25.2.6:
+  version "25.2.6"
+  resolved "https://registry.yarnpkg.com/expect/-/expect-25.2.6.tgz#85f022097e8ed3c5666c1bd7f9076d3a790a8a47"
+  integrity sha512-hMqqX3OX5Erw7CLoXXcawqi6xThhz/rYk+vEufhoCAyzDC2PW99ypYc/pvcgKjyuwbOB1wjqqClmwvlOL36Inw==
   dependencies:
-    "@jest/types" "^25.2.3"
+    "@jest/types" "^25.2.6"
     ansi-styles "^4.0.0"
-    jest-get-type "^25.2.1"
-    jest-matcher-utils "^25.2.3"
-    jest-message-util "^25.2.4"
-    jest-regex-util "^25.2.1"
+    jest-get-type "^25.2.6"
+    jest-matcher-utils "^25.2.6"
+    jest-message-util "^25.2.6"
+    jest-regex-util "^25.2.6"
 
 extend-shallow@^2.0.1:
   version "2.0.1"
@@ -3063,7 +3054,7 @@ jest-config@^25.2.4:
     pretty-format "^25.2.3"
     realpath-native "^2.0.0"
 
-jest-diff@^25.2.3:
+jest-diff@^25.2.6:
   version "25.2.6"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-25.2.6.tgz#a6d70a9ab74507715ea1092ac513d1ab81c1b5e7"
   integrity sha512-KuadXImtRghTFga+/adnNrv9s61HudRMR7gVSbP35UKZdn4IK2/0N0PpGZIqtmllK9aUyye54I3nu28OYSnqOg==
@@ -3203,24 +3194,23 @@ jest-leak-detector@^25.2.3:
     jest-get-type "^25.2.1"
     pretty-format "^25.2.3"
 
-jest-matcher-utils@^25.2.3:
-  version "25.2.3"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-25.2.3.tgz#59285bd6d6c810debc9caa585ed985e46a3f28fd"
-  integrity sha512-ZmiXiwQRVM9MoKjGMP5YsGGk2Th5ncyRxfXKz5AKsmU8m43kgNZirckVzaP61MlSa9LKmXbevdYqVp1ZKAw2Rw==
+jest-matcher-utils@^25.2.3, jest-matcher-utils@^25.2.6:
+  version "25.2.6"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-25.2.6.tgz#a5156c1daa16e13ff6c55117f798b285a294a3e6"
+  integrity sha512-+6IbC98ZBw3X7hsfUvt+7VIYBdI0FEvhSBjWo9XTHOc1KAAHDsrSHdeyHH/Su0r/pf4OEGuWRRLPnjkhS2S19A==
   dependencies:
     chalk "^3.0.0"
-    jest-diff "^25.2.3"
-    jest-get-type "^25.2.1"
-    pretty-format "^25.2.3"
+    jest-diff "^25.2.6"
+    jest-get-type "^25.2.6"
+    pretty-format "^25.2.6"
 
-jest-message-util@^25.2.4:
-  version "25.2.4"
-  resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-25.2.4.tgz#b1441b9c82f5c11fc661303cbf200a2f136a7762"
-  integrity sha512-9wWMH3Bf+GVTv0GcQLmH/FRr0x0toptKw9TA8U5YFLVXx7Tq9pvcNzTyJrcTJ+wLqNbMPPJlJNft4MnlcrtF5Q==
+jest-message-util@^25.2.4, jest-message-util@^25.2.6:
+  version "25.2.6"
+  resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-25.2.6.tgz#9d5523bebec8cd9cdef75f0f3069d6ec9a2252df"
+  integrity sha512-Hgg5HbOssSqOuj+xU1mi7m3Ti2nwSQJQf/kxEkrz2r2rp2ZLO1pMeKkz2WiDUWgSR+APstqz0uMFcE5yc0qdcg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
-    "@jest/test-result" "^25.2.4"
-    "@jest/types" "^25.2.3"
+    "@jest/types" "^25.2.6"
     "@types/stack-utils" "^1.0.1"
     chalk "^3.0.0"
     micromatch "^4.0.2"
@@ -3258,12 +3248,12 @@ jest-resolve-dependencies@^25.2.4:
     jest-regex-util "^25.2.1"
     jest-snapshot "^25.2.4"
 
-jest-resolve@^25.2.3:
-  version "25.2.3"
-  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-25.2.3.tgz#ababeaf2bb948cb6d2dea8453759116da0fb7842"
-  integrity sha512-1vZMsvM/DBH258PnpUNSXIgtzpYz+vCVCj9+fcy4akZl4oKbD+9hZSlfe9RIDpU0Fc28ozHQrmwX3EqFRRIHGg==
+jest-resolve@^25.2.3, jest-resolve@^25.2.6:
+  version "25.2.6"
+  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-25.2.6.tgz#84694ead5da13c2890ac04d4a78699ba937f3896"
+  integrity sha512-7O61GVdcAXkLz/vNGKdF+00A80/fKEAA47AEXVNcZwj75vEjPfZbXDaWFmAQCyXj4oo9y9dC9D+CLA11t8ieGw==
   dependencies:
-    "@jest/types" "^25.2.3"
+    "@jest/types" "^25.2.6"
     browser-resolve "^1.11.3"
     chalk "^3.0.0"
     jest-pnp-resolver "^1.2.1"
@@ -3337,23 +3327,23 @@ jest-serializer@^25.2.6:
   integrity sha512-RMVCfZsezQS2Ww4kB5HJTMaMJ0asmC0BHlnobQC6yEtxiFKIxohFA4QSXSabKwSggaNkqxn6Z2VwdFCjhUWuiQ==
 
 jest-snapshot@^25.2.4:
-  version "25.2.4"
-  resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-25.2.4.tgz#08d4517579c864df4280bcc948ceea34327a4ded"
-  integrity sha512-nIwpW7FZCq5p0AE3Oyqyb6jL0ENJixXzJ5/CD/XRuOqp3gS5OM3O/k+NnTrniCXxPFV4ry6s9HNfiPQBi0wcoA==
+  version "25.2.6"
+  resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-25.2.6.tgz#a3b99fa6fea4955b6a5fcb38c657e4daaba363f9"
+  integrity sha512-Zw/Ba6op5zInjPHoA2xGUrCw1G/iTHOGMhV02PzlrWhF9uTl2/jjk/bpOMkPaW8EyylmQbjQ2oj4jCfYwpDKng==
   dependencies:
     "@babel/types" "^7.0.0"
-    "@jest/types" "^25.2.3"
+    "@jest/types" "^25.2.6"
     "@types/prettier" "^1.19.0"
     chalk "^3.0.0"
-    expect "^25.2.4"
-    jest-diff "^25.2.3"
-    jest-get-type "^25.2.1"
-    jest-matcher-utils "^25.2.3"
-    jest-message-util "^25.2.4"
-    jest-resolve "^25.2.3"
+    expect "^25.2.6"
+    jest-diff "^25.2.6"
+    jest-get-type "^25.2.6"
+    jest-matcher-utils "^25.2.6"
+    jest-message-util "^25.2.6"
+    jest-resolve "^25.2.6"
     make-dir "^3.0.0"
     natural-compare "^1.4.0"
-    pretty-format "^25.2.3"
+    pretty-format "^25.2.6"
     semver "^6.3.0"
 
 jest-util@^25.2.3:
