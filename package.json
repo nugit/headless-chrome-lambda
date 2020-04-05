@@ -29,7 +29,7 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "jest": "^25.2.4",
     "jest-image-snapshot": "^3.0.1",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.3",
     "puppeteer": "^2.1.1",
     "serverless-dotenv-plugin": "^2.3.2",
     "serverless-offline": "^5.12.1"
