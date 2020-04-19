@@ -31,7 +31,7 @@
     "jest-image-snapshot": "^3.0.1",
     "prettier": "^2.0.4",
     "puppeteer": "^2.1.1",
-    "serverless-dotenv-plugin": "^2.3.2",
+    "serverless-dotenv-plugin": "^2.4.2",
     "serverless-offline": "^5.12.1"
   }
 }

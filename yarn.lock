@@ -4782,10 +4782,10 @@ semver@^6.0.0, semver@^6.1.2, semver@^6.2.0, semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
-serverless-dotenv-plugin@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/serverless-dotenv-plugin/-/serverless-dotenv-plugin-2.3.2.tgz#9ff1e6923538166030c80ec194d9fc8ecde698ac"
-  integrity sha512-ILoGzNFFR5FOStZB4oHBLHEj25vpxAGv/qIXO3mTAi5gVdLC16D8kIAnWdOom1y3sBGesgo/BajzBqCSizowew==
+serverless-dotenv-plugin@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/serverless-dotenv-plugin/-/serverless-dotenv-plugin-2.4.2.tgz#b778e43f9048d8292b3823a0c83f2367c909a5ed"
+  integrity sha512-UDJmMzYJ8by2BAYoDu+TirxT65y6MNIzAk0Eszy+H6ZSJsPu1YRNRxyyTof4kaQ5bGqhGUmuZvutHoSffb1obg==
   dependencies:
     chalk "^3.0.0"
     dotenv "^8.2.0"
