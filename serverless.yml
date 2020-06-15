@@ -1,7 +1,7 @@
 service: chrome-lambda
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   timeout: 180
   iamRoleStatements:
     - Effect: 'Allow'
