@@ -1,4 +1,4 @@
-FROM 'node:10.13-stretch'
+FROM 'node:12.13-stretch'
 
 # https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#chrome-headless-doesnt-launch-on-unix
 RUN apt-get update \
