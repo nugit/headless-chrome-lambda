@@ -1,5 +1,5 @@
 const { format } = require('prettier');
-const { Page } = require('puppeteer/lib/api');
+const { Page } = require('puppeteer/lib/cjs/puppeteer/common/Page');
 const { toMatchImageSnapshot } = require('jest-image-snapshot');
 const { renderAndScreenshotPage, renderPage } = require('../render');
 const { nugit1, helloWorld } = require('../fixtures');

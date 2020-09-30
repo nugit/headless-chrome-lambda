@@ -1,7 +1,7 @@
 service: chrome-lambda
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   timeout: 180
   iamRoleStatements:
     - Effect: 'Allow'
@@ -49,7 +49,7 @@ package:
 functions:
   headless-chrome:
     handler: src/index.handler
-    memorySize: 1600MB
+    memorySize: 1600
     timeout: 30
     environment:
       S3_BUCKET: ${env:S3_BUCKET}
